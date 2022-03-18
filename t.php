@@ -2,7 +2,484 @@
 
 <?php
 
-eval(base64_decode("IyEvdXNyL2Jpbi9lbnYgcGhwCjw/cGhwCmV2YWwoYmFzZTY0X2RlY29kZSgiIikpOwoKCgoKPz4KCgoKCgoKJGJpcnUgPSAiXGVbMzRtIjsKJGt1bmluZyA9ICJcZVszM20iOwokY3lhbiA9ICJcZVs5Nm0iOwokbWFnZW50YSA9ICJcZVszNW0iOwokaGlqYXUgPSAiXGVbOTJtIjsKJG1lcmFoID0gIlxlWzkxbSI7CmVjaG8gZmlsZV9nZXRfY29udGVudHMoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9heW1hbW1hL3Bhcy10cmFmY3QvbWFpbi9heW1hbnRpdGVsIik7CgoKCmVjaG8gIiBcbiBcbiI7CgplY2hvICIgICBQQVNTV09SRCAgPSAiOwogICAkcGFzc3dvcmQgPSB0cmltKGZnZXRzKFNURElOKSk7CmlmICgkcGFzc3dvcmQgIT09IGZpbGVfZ2V0X2NvbnRlbnRzKCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vYXltYW1tYS9wYXMtdHJhZmN0L21haW4vdHJhZmN0cGFzcyIpICl7CiAgICAgZWNobyAiJG1lcmFoIEVSUk9SICBQQVNTV09SRCBcbiBcbiI7CiAgICAgc3lzdGVtKCJzbGVlcCAyIik7Cn0gZWxzZSB7CiAgICAgIGVjaG8gIkxvZ2luIFN1Y2Nlc2Z1bGx5XG4iOwogICAgIHN5c3RlbSgiY2xlYXIiKTsKc3lzdGVtKCJzbGVlcCAyIik7CgoKCmVjaG8gIiB+fn5+fn4gQVVUTyAgVFJBRkZJQyAgMjAyMCB+fn5+flxuICAiOwplY2hvICcgV2Vic2l0ZSBNdTogJzsKJHVybCA9IHRyaW0oZmdldHMoU1RESU4pKTsKZWNobyAnIEp1bWxhaCBWaXNpdG9yOiAnOwokbWF4ID0gdHJpbShmZ2V0cyhTVERJTikpOwoKZXJyb3JfcmVwb3J0aW5nKDApOwpjbGFzcyBSYW5kb21fVUEKIHsKICAgIAogICAgLyoqCiAgICAgKiAKICAgICAqLyAKICAgIHZhciAkbGludXhfcHJvYzsKICAgIC8qKgogICAgICogCiAgICAgKi8KICAgIHZhciAkbWFjX3Byb2M7CiAgICAKICAgIC8qKgogICAgICogQQogICAgICovCiAgICB2YXIgJGxhbmc7CiAgICAKICAgIGZ1bmN0aW9uIF9fY29uc3RydWN0KCkKICAgIHsKICAgICAgICAkdGhpcy0+bGludXhfcHJvYyA9IGFycmF5KAogICAgICAgICAgICAnaTY4NicsCiAgICAgICAgICAgICd4ODZfNjQnCiAgICAgICAgKTsKICAgICAgICAKICAgICAgICAkdGhpcy0+bWFjX3Byb2MgPSBhcnJheSgKICAgICAgICAgICAgJ0ludGVsJywKICAgICAgICAgICAgJ1BQQycsCiAgICAgICAgICAgICdVOyBJbnRlbCcsCiAgICAgICAgICAgICdVOyBQUEMnCiAgICAgICAgKTsKICAgICAgICAKICAgICAgICAkdGhpcy0+bGFuZyA9IGFycmF5KAogICAgICAgICAgICAnZW4tVVMnLAogICAgICAgICAgICAnc2wtU0knCiAgICAgICAgKTsKICAgIH0KICAgIAogICAgZnVuY3Rpb24gZmlyZWZveCgpIHsKICAgICAgICAkdmVyID0gYXJyYXkoCiAgICAJJ0dlY2tvLycgLiBkYXRlKCdZbWQnLCByYW5kKHN0cnRvdGltZSgnMjAxMS0xLTEnKSwgbWt0aW1lKCkpKSAuICcgRmlyZWZveC8nIC4gcmFuZCg1LCA3KSAuICcuMCcsCiAgICAJJ0dlY2tvLycgLiBkYXRlKCdZbWQnLCByYW5kKHN0cnRvdGltZSgnMjAxMS0xLTEnKSwgbWt0aW1lKCkpKSAuICcgRmlyZWZveC8nIC4gcmFuZCg1LCA3KSAuICcuMC4xJywKICAgIAknR2Vja28vJyAuIGRhdGUoJ1ltZCcsIHJhbmQoc3RydG90aW1lKCcyMDEwLTEtMScpLCBta3RpbWUoKSkpIC4gJyBGaXJlZm94LzMuNi4nIC4gcmFuZCgxLCAyMCksCiAgICAJJ0dlY2tvLycgLiBkYXRlKCdZbWQnLCByYW5kKHN0cnRvdGltZSgnMjAxMC0xLTEnKSwgbWt0aW1lKCkpKSAuICcgRmlyZWZveC8zLjgnCiAgICAgICAgKTsKICAgIAogICAgICAgICRwbGF0Zm9ybXMgPSBhcnJheSgKICAgIAknKFdpbmRvd3MgTlQgJyAuIHJhbmQoNSwgNikgLiAnLicgLiByYW5kKDAsIDEpIC4gJzsgJyAuICR0aGlzLT5sYW5nW2FycmF5X3JhbmQoJHRoaXMtPmxhbmcsIDEpXSAuICc7IHJ2OjEuOS4nIC4gcmFuZCgwLCAyKSAuICcuMjApICcgLiAkdmVyW2FycmF5X3JhbmQoJHZlciwgMSldLAogICAgCScoWDExOyBMaW51eCAnIC4gJHRoaXMtPmxpbnV4X3Byb2NbYXJyYXlfcmFuZCgkdGhpcy0+bGludXhfcHJvYywgMSldIC4gJzsgcnY6JyAuIHJhbmQoNSwgNykgLiAnLjApICcgLiAkdmVyW2FycmF5X3JhbmQoJHZlciwgMSldLAogICAgCScoTWFjaW50b3NoOyAnIC4gJHRoaXMtPm1hY19wcm9jW2FycmF5X3JhbmQoJHRoaXMtPm1hY19wcm9jLCAxKV0gLiAnIE1hYyBPUyBYIDEwXycgLiByYW5kKDUsIDcpIC4gJ18nIC4gcmFuZCgwLCA5KSAuICcgcnY6JyAuIHJhbmQoMiwgNikgLiAnLjApICcgLiAkdmVyW2FycmF5X3JhbmQoJHZlciwgMSldCiAgICAgICAgKTsKICAgIAogICAgICAgIHJldHVybiAkcGxhdGZvcm1zW2FycmF5X3JhbmQoJHBsYXRmb3JtcywgMSldOwogICAgfQogICAgCiAgICBmdW5jdGlvbiBzYWZhcmkoKSB7CiAgICAgICAgJHNhZiA9IHJhbmQoNTMxLCA1MzUpIC4gJy4nIC4gcmFuZCgxLCA1MCkgLiAnLicgLiByYW5kKDEsIDcpOwogICAgICAgIGlmIChyYW5kKDAsIDEpID09IDApIHsKICAgIAkkdmVyID0gcmFuZCg0LCA1KSAuICcuJyAuIHJhbmQoMCwgMSk7CiAgICAgICAgfSBlbHNlIHsKICAgIAkkdmVyID0gcmFuZCg0LCA1KSAuICcuMC4nIC4gcmFuZCgxLCA1KTsKICAgICAgICB9CiAgICAKICAgICAgICAkcGxhdGZvcm1zID0gYXJyYXkoCiAgICAJJyhXaW5kb3dzOyBVOyBXaW5kb3dzIE5UICcgLiByYW5kKDUsIDYpIC4gJy4nIC4gcmFuZCgwLCAxKSAuICIpIEFwcGxlV2ViS2l0LyRzYWYgKEtIVE1MLCBsaWtlIEdlY2tvKSBWZXJzaW9uLyR2ZXIgU2FmYXJpLyRzYWYiLAogICAgCScoTWFjaW50b3NoOyBVOyAnIC4gJHRoaXMtPm1hY19wcm9jW2FycmF5X3JhbmQoJHRoaXMtPm1hY19wcm9jLCAxKV0gLiAnIE1hYyBPUyBYIDEwXycgLiByYW5kKDUsIDcpIC4gJ18nIC4gcmFuZCgwLCA5KSAuICcgcnY6JyAuIHJhbmQoMiwgNikgLiAnLjA7ICcgLiAkdGhpcy0+bGFuZ1thcnJheV9yYW5kKCR0aGlzLT5sYW5nLCAxKV0gLiAiKSBBcHBsZVdlYktpdC8kc2FmIChLSFRNTCwgbGlrZSBHZWNrbykgVmVyc2lvbi8kdmVyIFNhZmFyaS8kc2FmIiwKICAgIAknKGlQb2Q7IFU7IENQVSBpUGhvbmUgT1MgJyAuIHJhbmQoMywgNCkgLiAnXycgLiByYW5kKDAsIDMpIC4gJyBsaWtlIE1hYyBPUyBYOyAnIC4gJHRoaXMtPmxhbmdbYXJyYXlfcmFuZCgkdGhpcy0+bGFuZywgMSldIC4gIikgQXBwbGVXZWJLaXQvJHNhZiAoS0hUTUwsIGxpa2UgR2Vja28pIFZlcnNpb24vIiAuIHJhbmQoMywgNCkgLiAiLjAuNSBNb2JpbGUvOEIiIC4gcmFuZCgxMTEsIDExOSkgLiAiIFNhZmFyaS82JHNhZiIsCiAgICAgICAgKTsKICAgIAogICAgICAgIHJldHVybiAkcGxhdGZvcm1zW2FycmF5X3JhbmQoJHBsYXRmb3JtcywgMSldOwogICAgfQogICAgCiAgICBmdW5jdGlvbiBpZXhwbG9yZXIoKSB7CiAgICAgICAgJGllX2V4dHJhID0gYXJyYXkoCiAgICAJJycsCiAgICAJJzsgLk5FVCBDTFIgMS4xLicgLiByYW5kKDQzMjAsIDQzMjUpIC4gJycsCiAgICAJJzsgV09XNjQnCiAgICAgICAgKTsKICAgICAgICAkcGxhdGZvcm1zID0gYXJyYXkoCiAgICAJJyhjb21wYXRpYmxlOyBNU0lFICcgLiByYW5kKDUsIDkpIC4gJy4wOyBXaW5kb3dzIE5UICcgLiByYW5kKDUsIDYpIC4gJy4nIC4gcmFuZCgwLCAxKSAuICc7IFRyaWRlbnQvJyAuIHJhbmQoMywgNSkgLiAnLicgLiByYW5kKDAsIDEpIC4gJyknCiAgICAgICAgKTsKICAgIAogICAgICAgIHJldHVybiAkcGxhdGZvcm1zW2FycmF5X3JhbmQoJHBsYXRmb3JtcywgMSldOwogICAgfQogICAgCiAgICBmdW5jdGlvbiBvcGVyYSgpIHsKICAgICAgICAkb3BfZXh0cmEgPSBhcnJheSgKICAgIAknJywKICAgIAknOyAuTkVUIENMUiAxLjEuJyAuIHJhbmQoNDMyMCwgNDMyNSkgLiAnJywKICAgIAknOyBXT1c2NCcKICAgICAgICApOwogICAgICAgICRwbGF0Zm9ybXMgPSBhcnJheSgKICAgIAknKFgxMTsgTGludXggJyAuICR0aGlzLT5saW51eF9wcm9jW2FycmF5X3JhbmQoJHRoaXMtPmxpbnV4X3Byb2MsIDEpXSAuICc7IFU7ICcgLiAkdGhpcy0+bGFuZ1thcnJheV9yYW5kKCR0aGlzLT5sYW5nLCAxKV0gLiAnKSBQcmVzdG8vMi45LicgLiByYW5kKDE2MCwgMTkwKSAuICcgVmVyc2lvbi8nIC4gcmFuZCgxMCwgMTIpIC4gJy4wMCcsCiAgICAJJyhXaW5kb3dzIE5UICcgLiByYW5kKDUsIDYpIC4gJy4nIC4gcmFuZCgwLCAxKSAuICc7IFU7ICcgLiAkdGhpcy0+bGFuZ1thcnJheV9yYW5kKCR0aGlzLT5sYW5nLCAxKV0gLiAnKSBQcmVzdG8vMi45LicgLiByYW5kKDE2MCwgMTkwKSAuICcgVmVyc2lvbi8nIC4gcmFuZCgxMCwgMTIpIC4gJy4wMCcKICAgICAgICApOwogICAgCiAgICAgICAgcmV0dXJuICRwbGF0Zm9ybXNbYXJyYXlfcmFuZCgkcGxhdGZvcm1zLCAxKV07CiAgICB9CiAgICAKICAgIGZ1bmN0aW9uIGNocm9tZSgpIHsKICAgICAgICAkc2FmID0gcmFuZCg1MzEsIDUzNikgLiByYW5kKDAsIDIpOwogICAgCiAgICAgICAgJHBsYXRmb3JtcyA9IGFycmF5KAogICAgCScoWDExOyBMaW51eCAnIC4gJHRoaXMtPmxpbnV4X3Byb2NbYXJyYXlfcmFuZCgkdGhpcy0+bGludXhfcHJvYywgMSldIC4gIikgQXBwbGVXZWJLaXQvJHNhZiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8iIC4gcmFuZCgxMywgMTUpIC4gJy4wLicgLiByYW5kKDgwMCwgODk5KSAuICIuMCBTYWZhcmkvJHNhZiIsCiAgICAJJyhXaW5kb3dzIE5UICcgLiByYW5kKDUsIDYpIC4gJy4nIC4gcmFuZCgwLCAxKSAuICIpIEFwcGxlV2ViS2l0LyRzYWYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvIiAuIHJhbmQoMTMsIDE1KSAuICcuMC4nIC4gcmFuZCg4MDAsIDg5OSkgLiAiLjAgU2FmYXJpLyRzYWYiLAogICAgCScoTWFjaW50b3NoOyBVOyAnIC4gJHRoaXMtPm1hY19wcm9jW2FycmF5X3JhbmQoJHRoaXMtPm1hY19wcm9jLCAxKV0gLiAnIE1hYyBPUyBYIDEwXycgLiByYW5kKDUsIDcpIC4gJ18nIC4gcmFuZCgwLCA5KSAuICIpIEFwcGxlV2ViS2l0LyRzYWYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvIiAuIHJhbmQoMTMsIDE1KSAuICcuMC4nIC4gcmFuZCg4MDAsIDg5OSkgLiAiLjAgU2FmYXJpLyRzYWYiCiAgICAgICAgKTsKICAgIAogICAgICAgIHJldHVybiAkcGxhdGZvcm1zW2FycmF5X3JhbmQoJHBsYXRmb3JtcywgMSldOwogICAgfQogICAgCiAgICAvKioKICAgICAqIE1haW4gZnVuY3Rpb24gd2hpY2ggd2lsbCBjaG9vc2UgcmFuZG9tIGJyb3dzZXIKICAgICAqIEByZXR1cm4gc3RyaW5nIHVzZXIgYWdlbnQKICAgICAqLwogICAgZnVuY3Rpb24gZ2VuZXJhdGUoKSB7CiAgICAgICAgJHggPSByYW5kKDEsIDUpOwogICAgICAgIHN3aXRjaCAoJHgpIHsKICAgIAljYXNlIDE6CiAgICAJICAgIHJldHVybiAiTW96aWxsYS81LjAgIiAuICR0aGlzLT5maXJlZm94KCk7CiAgICAJICAgIGJyZWFrOwogICAgCWNhc2UgMjoKICAgIAkgICAgcmV0dXJuICJNb3ppbGxhLzUuMCAiIC4gJHRoaXMtPnNhZmFyaSgpOwogICAgCSAgICBicmVhazsKICAgIAljYXNlIDM6CiAgICAJICAgIHJldHVybiAiTW96aWxsYS8iIC4gcmFuZCg0LCA1KSAuICIuMCAiIC4gJHRoaXMtPmlleHBsb3JlcigpOwogICAgCSAgICBicmVhazsKICAgIAljYXNlIDQ6CiAgICAJICAgIHJldHVybiAiT3BlcmEvIiAuIHJhbmQoOCwgOSkgLiAnLicgLiByYW5kKDEwLCA5OSkgLiAnICcgLiAkdGhpcy0+b3BlcmEoKTsKICAgIAkgICAgYnJlYWs7CiAgICAJY2FzZSA1OgogICAgCSAgICByZXR1cm4gJ01vemlsbGEvNS4wJyAuICR0aGlzLT5jaHJvbWUoKTsKICAgIAkgICAgYnJlYWs7CiAgICAgICAgfQogICAgfQogICAgCn0KCmNsYXNzIGF1dG92aXNpdG9yIGV4dGVuZHMgUmFuZG9tX1VBIHsKCglwdWJsaWMgZnVuY3Rpb24gX19jb25zdHJ1Y3QoJHVybCkgewoJCSR0aGlzLT51cmwgPSAkdXJsOwoJfQoKCXByaXZhdGUgZnVuY3Rpb24gY3VybCgpIHsKCQkkY2ggPSBjdXJsX2luaXQoKTsKCQlDVVJMX1NFVE9QVCgkY2gsIENVUkxPUFRfVVJMLCAkdGhpcy0+dXJsKTsKCQlDVVJMX1NFVE9QVCgkY2gsIENVUkxPUFRfSFRUUEhFQURFUiwgYXJyYXkoJ1JlZmVyZXI6ICcuJHRoaXMtPmFjYWtSZWZlcmVyKCksCgkJCQkJCQkJCQkJCSAgICdVc2VyLUFnZW50OiAnLiR0aGlzLT5nZW5lcmF0ZSgpKSk7CgkJQ1VSTF9TRVRPUFQoJGNoLCBDVVJMT1BUX0ZPTExPV0xPQ0FUSU9OLCB0cnVlKTsKCQlDVVJMX1NFVE9QVCgkY2gsIENVUkxPUFRfU1NMX1ZFUklGWUhPU1QsIDApOwoJCUNVUkxfU0VUT1BUKCRjaCwgQ1VSTE9QVF9TU0xfVkVSSUZZUEVFUiwgMCk7CgkJQ1VSTF9TRVRPUFQoJGNoLCBDVVJMT1BUX1JFVFVSTlRSQU5TRkVSLCAxKTsKCQlDVVJMX1NFVE9QVCgkY2gsIENVUkxPUFRfVVNFUkFHRU5ULCAkdGhpcy0+Z2VuZXJhdGUoKSk7CgkJJHJlc3VsdCA9IGN1cmxfZXhlYygkY2gpOwoJCWN1cmxfY2xvc2UoJGNoKTsKCgkJcmV0dXJuICRyZXN1bHQ7Cgl9CgoJcHJpdmF0ZSBmdW5jdGlvbiB4Zmx1c2goKSB7CiAgICAJc3RhdGljICRvdXRwdXRfaGFuZGxlciA9IG51bGw7CiAgICAJaWYgKCRvdXRwdXRfaGFuZGxlciA9PT0gbnVsbCkgewogICAgICAgIAkkb3V0cHV0X2hhbmRsZXIgPSBAaW5pX2dldCgnb3V0cHV0X2hhbmRsZXInKTsKICAgIAl9CiAgICAJaWYgKCRvdXRwdXRfaGFuZGxlciA9PSAnb2JfZ3poYW5kbGVyJykgewogICAgICAgIAlyZXR1cm47CiAgICAJfQogICAgCWZsdXNoKCk7CiAgICAJaWYgKGZ1bmN0aW9uX2V4aXN0cygnb2JfZmx1c2gnKSBBTkQgZnVuY3Rpb25fZXhpc3RzKCdvYl9nZXRfbGVuZ3RoJykgQU5EIG9iX2dldF9sZW5ndGgoKSAhPT0gZmFsc2UpIHsKICAgICAgIAkJQG9iX2ZsdXNoKCk7CiAgICAJfSBlbHNlIGlmIChmdW5jdGlvbl9leGlzdHMoJ29iX2VuZF9mbHVzaCcpIEFORCBmdW5jdGlvbl9leGlzdHMoJ29iX3N0YXJ0JykgQU5EIGZ1bmN0aW9uX2V4aXN0cygnb2JfZ2V0X2xlbmd0aCcpIEFORCBvYl9nZXRfbGVuZ3RoKCkgIT09IEZBTFNFKSB7CiAgICAgICAJCUBvYl9lbmRfZmx1c2goKTsKICAgICAgICAJQG9iX3N0YXJ0KCk7CiAgICAJfQoJfQoKCXByaXZhdGUgZnVuY3Rpb24gYWNha1JlZmVyZXIoKSB7CgkJJGxpc3QgPSBhcnJheSgpOwoJCS8qIEFzYWwgdHJhZmZpYyB5YW5nIGRpIHN1Ym1pdCAqLyAKCQkkbGlzdFtdID0gImh0dHA6Ly9mYWNlYm9vay5jb20iOwoJCSRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS5jb20uc2ciOwoJCSRsaXN0W10gPSAiaHR0cDovL3R3aXR0ZXIuY29tIjsKIAkJJGxpc3RbXSA9ICJodHRwOi8vZmFjZWJvb2suY29tIjsKICAgICAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuY29tLnNnIjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly90d2l0dGVyLmNvbSI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLmNvLmlkIjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuY29tLm15IjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuanAiOwoJICAgICRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS51cyI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLnRsIjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuYWMiOwoJICAgICRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS5hZCI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLmFlIjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuYWYiOwoJICAgICRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS5hZyI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLnJ1IjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuYnkiOwoJICAgICRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS5jYSI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLmNuIjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuY2wiOwoJICAgICRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS5jbSI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLmN2IjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuZ2ciOwoJICAgICRsaXN0W10gPSAiaHR0cDovL2dvb2dsZS5nZSI7CgkgICAgJGxpc3RbXSA9ICJodHRwOi8vZ29vZ2xlLmdyIjsKCSAgICAkbGlzdFtdID0gImh0dHA6Ly9nb29nbGUuY29tLnR3IjsKCSAgICAkbGlzdFtdID0gImh0dHBzOi8vc2VhcmNoLnlhaG9vLmNvbSI7CiAgICAgICAgJGxpc3RbXSA9ICJodHRwOi8vd3d3LmJlaW55dS5jb20iOwoKCgkJJGFjYWsgPSBhcnJheV9yYW5kKCRsaXN0LDEpOwoJCXJldHVybiAkbGlzdFskYWNha107Cgl9CgoJcHVibGljIGZ1bmN0aW9uIGphbGFua2FuKCkgewoJCSR0aGlzLT54Zmx1c2goKTsKCgkJJHRoaXMtPmN1cmwoKTsKCQlyZXR1cm4gJHRoaXMtPmFjYWtSZWZlcmVyKCk7IAoKCQkkdGhpcy0+eGZsdXNoKCk7Cgl9Cgp9IAokZ2dnID0gZmlsZV9nZXRfY29udGVudHMoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9heW1hbW1hL3Bhcy10cmFmY3QvbWFpbi9heW1hbnRpdGVsMiIpOwoKZm9yKCRpID0gMTsgJGkgPCAkbWF4KzE7ICRpKyspIHsKCSRjbGFzcyA9IG5ldyBhdXRvdmlzaXRvcigkdXJsKTsKCWVjaG8gJGdnZy4iICAgXG4iCgllY2hvICRpLiIuIFRSQUZGSUMgLSBbIi4kY2xhc3MtPmphbGFua2FuKCkuIl0gIFxuIjsKfX0="));
+$biru = "\e[34m";
+
+$kuning = "\e[33m";
+
+$cyan = "\e[96m";
+
+$magenta = "\e[35m";
+
+$hijau = "\e[92m";
+
+$merah = "\e[91m";
+
+echo file_get_contents("https://raw.githubusercontent.com/aymamma/pas-trafct/main/aymantitel");
+
+echo " \n \n";
+
+echo "   PASSWORD  = ";
+
+   $password = trim(fgets(STDIN));
+
+if ($password !== file_get_contents("https://raw.githubusercontent.com/aymamma/pas-trafct/main/trafctpass") ){
+
+     echo "$merah ERROR  PASSWORD \n \n";
+
+     system("sleep 2");
+
+} else {
+
+      echo "Login Succesfully\n";
+
+     system("clear");
+
+system("sleep 2");
+
+echo " ~~~~~~ AUTO  TRAFFIC  2020 ~~~~~\n  ";
+
+echo ' Website Mu: ';
+
+$url = trim(fgets(STDIN));
+
+echo ' Jumlah Visitor: ';
+
+$max = trim(fgets(STDIN));
+
+error_reporting(0);
+
+class Random_UA
+
+ {
+
+    
+
+    /**
+
+     * 
+
+     */ 
+
+    var $linux_proc;
+
+    /**
+
+     * 
+
+     */
+
+    var $mac_proc;
+
+    
+
+    /**
+
+     * A
+
+     */
+
+    var $lang;
+
+    
+
+    function __construct()
+
+    {
+
+        $this->linux_proc = array(
+
+            'i686',
+
+            'x86_64'
+
+        );
+
+        
+
+        $this->mac_proc = array(
+
+            'Intel',
+
+            'PPC',
+
+            'U; Intel',
+
+            'U; PPC'
+
+        );
+
+        
+
+        $this->lang = array(
+
+            'en-US',
+
+            'sl-SI'
+
+        );
+
+    }
+
+    
+
+    function firefox() {
+
+        $ver = array(
+
+    	'Gecko/' . date('Ymd', rand(strtotime('2011-1-1'), mktime())) . ' Firefox/' . rand(5, 7) . '.0',    	'Gecko/' . date('Ymd', rand(strtotime('2011-1-1'), mktime())) . ' Firefox/' . rand(5, 7) . '.0.1',
+
+    	'Gecko/' . date('Ymd', rand(strtotime('2010-1-1'), mktime())) . ' Firefox/3.6.' . rand(1, 20),
+
+    	'Gecko/' . date('Ymd', rand(strtotime('2010-1-1'), mktime())) . ' Firefox/3.8'
+
+        );
+
+    
+
+        $platforms = array(
+
+    	'(Windows NT ' . rand(5, 6) . '.' . rand(0, 1) . '; ' . $this->lang[array_rand($this->lang, 1)] . '; rv:1.9.' . rand(0, 2) . '.20) ' . $ver[array_rand($ver, 1)],
+
+    	'(X11; Linux ' . $this->linux_proc[array_rand($this->linux_proc, 1)] . '; rv:' . rand(5, 7) . '.0) ' . $ver[array_rand($ver, 1)],
+
+    	'(Macintosh; ' . $this->mac_proc[array_rand($this->mac_proc, 1)] . ' Mac OS X 10_' . rand(5, 7) . '_' . rand(0, 9) . ' rv:' . rand(2, 6) . '.0) ' . $ver[array_rand($ver, 1)]
+
+        );
+
+    
+
+        return $platforms[array_rand($platforms, 1)];
+
+    }
+
+    
+
+    function safari() {
+
+        $saf = rand(531, 535) . '.' . rand(1, 50) . '.' . rand(1, 7);
+
+        if (rand(0, 1) == 0) {
+
+    	$ver = rand(4, 5) . '.' . rand(0, 1);
+
+        } else {
+
+    	$ver = rand(4, 5) . '.0.' . rand(1, 5);
+
+        }
+
+    
+
+        $platforms = array(
+
+    	'(Windows; U; Windows NT ' . rand(5, 6) . '.' . rand(0, 1) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
+
+    	'(Macintosh; U; ' . $this->mac_proc[array_rand($this->mac_proc, 1)] . ' Mac OS X 10_' . rand(5, 7) . '_' . rand(0, 9) . ' rv:' . rand(2, 6) . '.0; ' . $this->lang[array_rand($this->lang, 1)] . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
+
+    	'(iPod; U; CPU iPhone OS ' . rand(3, 4) . '_' . rand(0, 3) . ' like Mac OS X; ' . $this->lang[array_rand($this->lang, 1)] . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . rand(3, 4) . ".0.5 Mobile/8B" . rand(111, 119) . " Safari/6$saf",
+
+        );
+
+    
+
+        return $platforms[array_rand($platforms, 1)];
+
+    }
+
+    
+
+    function iexplorer() {
+
+        $ie_extra = array(
+
+    	'',
+
+    	'; .NET CLR 1.1.' . rand(4320, 4325) . '',
+
+    	'; WOW64'
+
+        );
+
+        $platforms = array(
+
+    	'(compatible; MSIE ' . rand(5, 9) . '.0; Windows NT ' . rand(5, 6) . '.' . rand(0, 1) . '; Trident/' . rand(3, 5) . '.' . rand(0, 1) . ')'
+
+        );
+
+    
+
+        return $platforms[array_rand($platforms, 1)];
+
+    }
+
+    
+
+    function opera() {
+
+        $op_extra = array(
+
+    	'',
+
+    	'; .NET CLR 1.1.' . rand(4320, 4325) . '',
+
+    	'; WOW64'
+
+        );
+
+        $platforms = array(
+
+    	'(X11; Linux ' . $this->linux_proc[array_rand($this->linux_proc, 1)] . '; U; ' . $this->lang[array_rand($this->lang, 1)] . ') Presto/2.9.' . rand(160, 190) . ' Version/' . rand(10, 12) . '.00',
+
+    	'(Windows NT ' . rand(5, 6) . '.' . rand(0, 1) . '; U; ' . $this->lang[array_rand($this->lang, 1)] . ') Presto/2.9.' . rand(160, 190) . ' Version/' . rand(10, 12) . '.00'
+
+        );
+
+    
+
+        return $platforms[array_rand($platforms, 1)];
+
+    }
+
+    
+
+    function chrome() {
+
+        $saf = rand(531, 536) . rand(0, 2);
+
+    
+
+        $platforms = array(
+
+    	'(X11; Linux ' . $this->linux_proc[array_rand($this->linux_proc, 1)] . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . rand(13, 15) . '.0.' . rand(800, 899) . ".0 Safari/$saf",
+
+    	'(Windows NT ' . rand(5, 6) . '.' . rand(0, 1) . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . rand(13, 15) . '.0.' . rand(800, 899) . ".0 Safari/$saf",
+
+    	'(Macintosh; U; ' . $this->mac_proc[array_rand($this->mac_proc, 1)] . ' Mac OS X 10_' . rand(5, 7) . '_' . rand(0, 9) . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . rand(13, 15) . '.0.' . rand(800, 899) . ".0 Safari/$saf"
+
+        );
+
+    
+
+        return $platforms[array_rand($platforms, 1)];
+
+    }
+
+    
+
+    /**
+
+     * Main function which will choose random browser
+
+     * @return string user agent
+
+     */
+
+    function generate() {
+
+        $x = rand(1, 5);
+
+        switch ($x) {
+
+    	case 1:
+
+    	    return "Mozilla/5.0 " . $this->firefox();
+
+    	    break;
+
+    	case 2:
+
+    	    return "Mozilla/5.0 " . $this->safari();
+
+    	    break;
+
+    	case 3:
+
+    	    return "Mozilla/" . rand(4, 5) . ".0 " . $this->iexplorer();
+
+    	    break;
+
+    	case 4:
+
+    	    return "Opera/" . rand(8, 9) . '.' . rand(10, 99) . ' ' . $this->opera();
+
+    	    break;
+
+    	case 5:
+
+    	    return 'Mozilla/5.0' . $this->chrome();
+
+    	    break;
+
+        }
+
+    }
+
+    
+
+}
+
+class autovisitor extends Random_UA {
+
+	public function __construct($url) {
+
+		$this->url = $url;
+
+	}
+
+	private function curl() {
+
+		$ch = curl_init();
+
+		CURL_SETOPT($ch, CURLOPT_URL, $this->url);
+
+		CURL_SETOPT($ch, CURLOPT_HTTPHEADER, array('Referer: '.$this->acakReferer(),
+
+												   'User-Agent: '.$this->generate()));
+
+		CURL_SETOPT($ch, CURLOPT_FOLLOWLOCATION, true);
+
+		CURL_SETOPT($ch, CURLOPT_SSL_VERIFYHOST, 0);
+
+		CURL_SETOPT($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+		CURL_SETOPT($ch, CURLOPT_RETURNTRANSFER, 1);
+
+		CURL_SETOPT($ch, CURLOPT_USERAGENT, $this->generate());
+
+		$result = curl_exec($ch);
+
+		curl_close($ch);
+
+		return $result;
+
+	}
+
+	private function xflush() {
+
+    	static $output_handler = null;
+
+    	if ($output_handler === null) {
+
+        	$output_handler = @ini_get('output_handler');
+
+    	}
+
+    	if ($output_handler == 'ob_gzhandler') {
+
+        	return;
+
+    	}
+
+    	flush();
+
+    	if (function_exists('ob_flush') AND function_exists('ob_get_length') AND ob_get_length() !== false) {
+
+       		@ob_flush();
+
+    	} else if (function_exists('ob_end_flush') AND function_exists('ob_start') AND function_exists('ob_get_length') AND ob_get_length() !== FALSE) {
+
+       		@ob_end_flush();
+
+        	@ob_start();
+
+    	}
+
+	}
+
+	private function acakReferer() {
+
+		$list = array();
+
+		/* Asal traffic yang di submit */ 
+
+		$list[] = "http://facebook.com";
+
+		$list[] = "http://google.com.sg";
+
+		$list[] = "http://twitter.com";
+
+ 		$list[] = "http://facebook.com";
+
+        $list[] = "http://google.com.sg";
+
+	    $list[] = "http://twitter.com";
+
+	    $list[] = "http://google.co.id";
+
+	    $list[] = "http://google.com.my";
+
+	    $list[] = "http://google.jp";
+
+	    $list[] = "http://google.us";
+
+	    $list[] = "http://google.tl";
+
+	    $list[] = "http://google.ac";
+
+	    $list[] = "http://google.ad";
+
+	    $list[] = "http://google.ae";
+
+	    $list[] = "http://google.af";
+
+	    $list[] = "http://google.ag";
+
+	    $list[] = "http://google.ru";
+
+	    $list[] = "http://google.by";
+
+	    $list[] = "http://google.ca";
+
+	    $list[] = "http://google.cn";
+
+	    $list[] = "http://google.cl";
+
+	    $list[] = "http://google.cm";
+
+	    $list[] = "http://google.cv";
+
+	    $list[] = "http://google.gg";
+
+	    $list[] = "http://google.ge";
+
+	    $list[] = "http://google.gr";
+
+	    $list[] = "http://google.com.tw";
+
+	    $list[] = "https://search.yahoo.com";
+
+        $list[] = "http://www.beinyu.com";
+
+		$acak = array_rand($list,1);
+
+		return $list[$acak];
+
+	}
+
+	public function jalankan() {
+
+		$this->xflush();
+
+		$this->curl();
+
+		return $this->acakReferer(); 
+
+		$this->xflush();
+
+	}
+
+} 
+
+$ggg = file_get_contents("https://raw.githubusercontent.com/aymamma/pas-trafct/main/aymantitel2");
+
+for($i = 1; $i < $max+1; $i++) {
+
+	$class = new autovisitor($url);
+
+	echo $ggg."   \n"
+
+	echo $i.". TRAFFIC - [".$class->jalankan()."]  \n";
+
+}}
 
 ?>
-
